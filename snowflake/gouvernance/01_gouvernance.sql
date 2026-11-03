@@ -1,5 +1,5 @@
 USE ROLE ACCOUNTADMIN;
-SET moi = CURRENT_USER();
+SET moi = '"' || CURRENT_USER() || '"';
 
 -- Les rôles : ni rattachés à SYSADMIN, ni entre eux. Chacun ne fait que son métier.
 CREATE ROLE IF NOT EXISTS GOUVERNANCE COMMENT = 'Écrit les règles : tags et politiques. Ne lit pas les données';
